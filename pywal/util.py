@@ -103,6 +103,42 @@ class Color:
         percent = float(re.sub(r'[\D\.]', '', str(percent)))
         return Color(saturate_color(self.hex_color, percent / 100))
 
+    @property
+    def r(self):
+        """Red channel."""
+        r = (*hex_to_rgb(self.hex_color),)[0]
+        return r
+
+    @property
+    def g(self):
+        """Green channel."""
+        g = (*hex_to_rgb(self.hex_color),)[1]
+        return g
+
+    @property
+    def b(self):
+        """Blue channel."""
+        b = (*hex_to_rgb(self.hex_color),)[2]
+        return b
+
+    @property
+    def r_float(self):
+        """Red channel."""
+        r = (*hex_to_rgb(self.hex_color),)[0]
+        return r/255
+
+    @property
+    def g_float(self):
+        """Green channel."""
+        g = (*hex_to_rgb(self.hex_color),)[1]
+        return g/255
+
+    @property
+    def b_float(self):
+        """Blue channel."""
+        b = (*hex_to_rgb(self.hex_color),)[2]
+        return b/255
+
 
 def read_file(input_file):
     """Read data from a file and trim newlines."""
